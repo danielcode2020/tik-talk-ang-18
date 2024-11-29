@@ -2,7 +2,7 @@
   border: 1px solid var(--light-color);
   padding: 32px 24px;
   display: grid;
-  grid-template-columns: repeat(4,1fr); // because visually we have 4 columns in this div
+  grid-template-columns: repeat(2,1fr) 200px 1fr; // because visually we have 4 columns in this div
   grid-gap: 32px;
 }
 
@@ -25,3 +25,8 @@
   gap: 8px;
 }
 
+.profile-card__tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

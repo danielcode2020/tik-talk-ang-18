@@ -4,6 +4,7 @@ import {ProfileCardComponent} from './common-ui/profile-card/profile-card.compon
 import {ProfileService} from './data/services/profile.service';
 import {HttpClient} from '@angular/common/http';
 import {JsonPipe} from '@angular/common';
+import {Profile} from "./data/interfaces/profile.interface";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import {JsonPipe} from '@angular/common';
 })
 export class AppComponent {
   profileService = inject(ProfileService);
-  profiles: any = []
+  profiles: Profile[] = []
 
 
   constructor() {
