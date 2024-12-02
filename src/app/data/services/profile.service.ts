@@ -13,4 +13,8 @@ export class ProfileService {
   getTestAccounts(){
     return this.httpClient.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
   }
+
+  getMe(){
+    return this.httpClient.get<Profile>(`${this.baseApiUrl}account/me`)
+  }
 }

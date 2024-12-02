@@ -1,15 +1,41 @@
-<form action="" class="login-form">
- <h1 class="h1">Login</h1>
-    <label class="tt-control-label">
-        Telegram username
-        <input class="tt-input mb16" type="text" placeholder="Enter login">
-    </label>
-    <label class="tt-control-label">
-        Password
-        <input class="tt-input mb32" type="text" placeholder="Enter password">
-    </label>
+<form
+  action=""
+  class="login-form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
 
-    <button class="btn">
-        Submit
-    </button>
+  <h1 class="h1">Login</h1>
+
+  <label class="tt-control-label mb16">
+    Telegram username
+    <input
+      formControlName="username"
+      class="tt-input"
+      type="text"
+      placeholder="Enter login">
+  </label>
+
+  <label class="tt-control-label mb32">
+    Password
+    <div class="password-input">
+        <input
+          formControlName="password"
+          class="tt-input"
+          [type]="isPasswordVisible() ? 'text' : 'password'"
+          placeholder="Enter password">
+
+      <button
+        class="password-eye-btn"
+        [class.active]="isPasswordVisible()"
+        (click)="isPasswordVisible.set(!isPasswordVisible())"
+      >
+        view
+      </button>
+    </div>
+  </label>
+
+  <button class="btn">
+    Submit
+  </button>
 </form>
